@@ -1,17 +1,28 @@
 import { Component } from "react";
+import list from '../data.json';
+import BeastList from '../components/BeastList';
+import Results from '../components/Results';
 
 class Main extends Component {
-    constructor(props){
-        super(props)
+    constructor(){
+        super()
+        this.state = {
+            currentBeast: { image_url: null},
+            beastList: list,
+        }
     }
-    render(){
+
+  selectCurrentBeast = (beast) => {
+    this.setState({ currentBeast: beast });
+  }
+
+    render() {
+        console.log(this.state.currentBeast);
         return (
-            <main>
-                <img src={this.props.img} height={200} width={200}/>
-               <h2>Title: {this.props.title}</h2>
-               <p>Website Url: {this.props.website}</p>
-               <p>Description: {this.props.description}</p>
-            </main>
+    <div id="main">
+        <Results currentBeast={this.state.currentBeast}/>
+        <BeastList beasts={this.state.beastList} selectBeast={this.selectCurrentBeast}/>
+    </div>
         )
     }
 }
