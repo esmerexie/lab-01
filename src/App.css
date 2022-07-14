@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+
+div.card {
+margin:40px auto 20px auto;
+border: solid 1px black;
+background-color: blanchedalmond;
+}
+
+img {
+  /* margin: 10px; */
+  border: solid 1px black
+}

@@ -9,6 +9,7 @@ class Main extends Component {
         this.state = {
             currentBeast: { image_url: null},
             beastList: list,
+            votes: 0
         }
     }
 
